@@ -1,7 +1,5 @@
 ﻿Feature: SpecFlowFeature1
-	In order to avoid silly mistakes
-	As a math idiot
-	I want to be told the sum of two numbers
+	Validates the messages text for blank input
 
 @nUnit
 Scenario: Validation of messages for invalid input in sign up page

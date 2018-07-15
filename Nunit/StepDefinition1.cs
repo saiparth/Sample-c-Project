@@ -27,6 +27,7 @@ namespace Nunit
 		[Then(@"I should be on ""(.*)"" page")]
 		public void ThenIShouldBeOnPage(string ExpectedPagTitle)
 		{
+			//you can create a excpetion handler to continue on failure
 			base.WaitForPageToLoad(ExpectedPagTitle);
 			Assert.AreEqual(base.GetTitle(),ExpectedPagTitle);
 		}
@@ -34,6 +35,7 @@ namespace Nunit
 		[When(@"I click on ""(.*)"" in login page")]
 		public void WhenIClickOnInLoginPage(string elementToClick)
 		{
+			//call the click element method
 			new LoginPage().ClickElementsInSignInPage(elementToClick);
 		}
 
