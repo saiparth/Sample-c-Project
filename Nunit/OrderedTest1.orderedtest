@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<OrderedTest name="orderedtest1" storage="c:\users\partha\documents\visual studio 2017\projects\selenium\nunit\orderedtest1.orderedtest" id="d3a46d02-1093-4446-9e0b-25a76e4dbe97" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestLinks>
+    <TestLink id="0d10836c-49e4-55b8-5d96-93b1e12065a5" name="RadioButton" storage="bin\debug\nunit.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel,   PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="c1e17d0b-ce6a-f5bc-a843-51a3f6adac38" name="checkBoxesDemo" storage="bin\debug\nunit.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel,   PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="2f089266-fa9c-ea47-16e0-73c8bad90647" name="DropDownDemo" storage="bin\debug\nunit.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel,   PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="3a3afa03-2f06-b63a-6478-d38bdc5448f4" name="SwicthToWindow" storage="bin\debug\nunit.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel,   PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="603ac922-629c-52c5-5677-25ffcf75ab0b" name="SwicthToAlertw" storage="bin\debug\nunit.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel,   PublicKeyToken=b03f5f7f11d50a3a" />
+  </TestLinks>
+</OrderedTest>

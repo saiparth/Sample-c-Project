@@ -7,6 +7,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Opera;
 using System.Configuration;
 using System.Diagnostics;
 
@@ -22,17 +23,29 @@ namespace Nunit
 			switch (browser.ToLower())
 			{
 				case "chrome":
-					wd = new ChromeDriver();
+					OperaOptions opt = new OperaOptions();
+					opt.BinaryLocation = @"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe";
+					wd = new ChromeDriver(@"C:\Users\partha\Documents\visual studio 2017\Projects\Selenium\Nunit\bin\Debug\");
 					break;
 
 				case "firefox":
-					FirefoxDriverService serv = FirefoxDriverService.CreateDefaultService();
-					serv.FirefoxBinaryPath = "";
+					FirefoxDriverService serv = FirefoxDriverService.CreateDefaultService(@"C:\Users\partha\Documents\visual studio 2017\Projects\Selenium\Nunit\bin\Debug\", "geckodriver.exe");
+					serv.FirefoxBinaryPath = @"C:\Program Files\Mozilla Firefox\firefox.exe";
 					wd = new FirefoxDriver(serv);
 					break;
-				default:
+
+				case "opera":
+					OperaOptions op = new OperaOptions();
+					op.BinaryLocation=@"C:\Program Files\Opera\launcher.exe";
+					wd = new OperaDriver(@"C:\Users\partha\Documents\visual studio 2017\Projects\Selenium\Nunit\bin\Debug\");
 					break;
+
+				case "ie":
+					break;
+
 			}
+			wd.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(120);
+			wd.Manage().Window.Maximize();
 			return wd;
 		}
 
@@ -109,6 +122,12 @@ namespace Nunit
 				return null;
 			});
 		}
+		public void WaitForWindow(string by, int timeout = 60)
+		{
+			WebDriverWait wait = new WebDriverWait(wd, TimeSpan.FromSeconds(timeout));
+			wait.IgnoreExceptionTypes(typeof(NoSuchElementException));
+			wait.Until ( ExpectedConditions.TitleIs(by));
+		}
 		public bool IsWebElementDisplayed(By by,int timout=60)
 		{
 			bool status = false;
@@ -126,6 +145,15 @@ namespace Nunit
 				}
 			}
 			return status;
+		}
+
+		public void SwitchToWindow(string title)
+		{
+			foreach (var windows in wd.WindowHandles)
+			{
+				if(wd.SwitchTo().Window(windows).Title.Equals(title))
+				break;
+			}
 		}
 	}
 }
